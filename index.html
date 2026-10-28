@@ -973,9 +973,9 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
             <select id="tip"><option>Pachet aer condiționat + montaj</option><option>Multisplit (2–3 camere)</option><option>Altă marcă (Daikin, Mitsubishi, AUX)</option><option>Preinstalare trasee la roșu</option><option>Doar montaj (am aparatul)</option><option>Aer condiționat locuință</option><option>Sistem VRF / comercial</option><option>Ventilație / CTA</option><option>Pompă de căldură</option><option>Mentenanță</option><option>Altceva</option></select>
           </label>
           <label for="msg">Detalii<textarea id="msg" placeholder="Ex: apartament 3 camere, 70 mp, etajul 4"></textarea></label>
-          <button class="btn primary" type="submit">Trimite cererea</button>
+          <button class="btn primary" type="submit">Trimite cererea pe WhatsApp</button>
           <p class="note">Folosim datele trimise doar ca să îți răspundem. Detalii în <a href="#confidentialitate">Politica de confidențialitate</a>.</p>
-          <p class="ok" id="ok" hidden>Previzualizare: formularul va trimite cererea pe email după ce site-ul e pus online.</p>
+          <p class="ok" id="ok" hidden></p>
         </form>
       </div>
     </div>
@@ -1261,7 +1261,14 @@ document.querySelectorAll('[data-brand]').forEach(function(a){a.addEventListener
   l.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
   document.addEventListener('click',function(e){if(!e.target.closest('header'))set(false);});
 })();
-document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').hidden=false;});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+  var v=function(id){var x=document.getElementById(id);return x?x.value.trim():'';};
+  var t='Cerere de pe site (ocasvent.ro)\nNume: '+v('nume')+'\nTelefon: '+v('tel')+'\nTip lucrare: '+v('tip')+(v('msg')?'\n\n'+v('msg'):'');
+  var wa='https://wa.me/40752632558?text='+encodeURIComponent(t);
+  var ml='mailto:office@ocasvent.ro?subject='+encodeURIComponent('Cerere ofertă - '+v('nume'))+'&body='+encodeURIComponent(t);
+  var ok=document.getElementById('ok');ok.innerHTML='Mesajul e pregătit. Trimite-l pe <a href="'+wa+'" target="_blank" rel="noopener">WhatsApp</a> sau pe <a href="'+ml+'">email</a>. Dacă nu se deschide nimic, sună-ne la 0752 632 558.';ok.hidden=false;
+  window.open(wa,'_blank','noopener');
+});
 </script>
 </body>
 </html>
