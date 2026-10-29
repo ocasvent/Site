@@ -2,6 +2,13 @@
 <html lang="ro">
 <head>
 <meta charset="utf-8">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+try{if(localStorage.getItem('ov_consent')==='yes')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'denied'});}catch(e){}
+gtag('js',new Date());gtag('config','AW-18543638531');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18543638531"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Preinstalare aer condiționat la roșu în Cluj · Ocas Vent</title>
 <meta name="description" content="Construiești o casă în Cluj? Montăm traseele de aer condiționat înainte de tencuieli și termoizolație. Fără spart pereți după finisaje. Ofertă în 24 de ore.">
@@ -526,5 +533,13 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
   </nav>
 </footer>
 <script>(function(){var b=document.getElementById('menubtn'),l=document.getElementById('links');if(!b||!l)return;b.addEventListener('click',function(){var o=!l.classList.contains('open');l.classList.toggle('open',o);b.setAttribute('aria-expanded',o);});})();</script>
+<div id="ovcc" role="dialog" aria-live="polite" aria-label="Cookie-uri" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:#0E1A24;color:#F3F6F8;border-radius:14px;padding:16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.3);font:14px/1.45 'IBM Plex Sans',system-ui,sans-serif">
+<p style="margin:0 0 12px">Folosim cookie-uri Google Ads doar ca să vedem câți clienți vin din reclame. Le punem numai dacă ești de acord. <a href="/#cookies" style="color:#6FAAF0">Detalii</a></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="ovcc-yes" style="flex:1;min-width:120px;padding:10px 14px;border:0;border-radius:10px;background:#1B6FD1;color:#fff;font-weight:600;cursor:pointer">Accept</button><button type="button" id="ovcc-no" style="flex:1;min-width:120px;padding:10px 14px;border:1px solid #5A6B78;border-radius:10px;background:transparent;color:#F3F6F8;font-weight:600;cursor:pointer">Refuz</button></div></div>
+<script>(function(){var b=document.getElementById('ovcc');function g(){try{return localStorage.getItem('ov_consent')}catch(e){return null}}function s(v){try{localStorage.setItem('ov_consent',v)}catch(e){}}
+function set(v){s(v);gtag('consent','update',v==='yes'?{ad_storage:'granted',ad_user_data:'granted'}:{ad_storage:'denied',ad_user_data:'denied'});b.hidden=true;}
+document.getElementById('ovcc-yes').onclick=function(){set('yes')};document.getElementById('ovcc-no').onclick=function(){set('no')};
+window.ovConsentOpen=function(){b.hidden=false};if(!g())b.hidden=false;
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me"]');if(a)gtag('event',a.href.indexOf('tel:')===0?'click_telefon':'click_whatsapp',{link_url:a.href});});})();</script>
 </body>
 </html>

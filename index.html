@@ -2,6 +2,13 @@
 <html lang="ro">
 <head>
 <meta charset="utf-8">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+try{if(localStorage.getItem('ov_consent')==='yes')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'denied'});}catch(e){}
+gtag('js',new Date());gtag('config','AW-18543638531');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18543638531"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ocas Vent · Aer condiționat și instalații HVAC în Cluj-Napoca</title>
 <meta name="description" content="Montaj aer condiționat în Cluj-Napoca și împrejurimi, cu prețuri afișate: pachete Ferroli cu montaj inclus, igienizare, preinstalare la roșu, VRF, ventilație și pompe de căldură.">
@@ -1054,6 +1061,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
         <li>firma de contabilitate;</li>
         <li>furnizorii de găzduire web și email (Cloudflare);</li>
         <li>Google Fonts, care livrează fonturile site-ului și primește în acest scop adresa IP a vizitatorului;</li>
+        <li>Google Ireland Ltd. (Google Ads), doar dacă accepți cookie-urile de marketing, ca să măsurăm câte vizite, apeluri și mesaje vin din reclamele noastre;</li>
         <li>furnizorul sau producătorul echipamentului, când e nevoie pentru garanție sau service;</li>
         <li>autoritățile publice, doar când legea ne obligă.</li>
       </ul>
@@ -1074,23 +1082,24 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
     </article>
 
     <article class="legal-doc" id="cookies" hidden>
-      <span class="label">Actualizată la 27.10.2026</span>
+      <span class="label">Actualizată la 29.10.2026</span>
       <h2>Politica de cookie-uri</h2>
       <p>Cookie-urile sunt fișiere mici pe care un site le salvează în browserul tău. Mai jos îți spunem ce folosește site-ul Ocas Vent, operat de SC OCAS VENT INTERNATIONAL SRL.</p>
 
-      <h3>1. Ce cookie-uri folosim</h3>
-      <p>În prezent site-ul <b>nu folosește cookie-uri de analiză, de publicitate sau de urmărire</b>. Nu folosim Google Analytics, Facebook Pixel sau alte instrumente de acest fel.</p>
-      <p>Pot exista doar cookie-uri strict necesare, puse de serverul de găzduire pentru securitate și funcționarea corectă a site-ului. Acestea nu cer consimțământ, conform Legii nr. 506/2004.</p>
+      <h3>1. Cookie-uri strict necesare</h3>
+      <p>Serverul de găzduire (Cloudflare) poate pune cookie-uri pentru securitate și funcționarea corectă a site-ului. Alegerea ta privind cookie-urile o păstrăm în browser (localStorage, cheia „ov_consent”). Acestea nu cer consimțământ, conform Legii nr. 506/2004.</p>
+
+      <h3>2. Cookie-uri de marketing (doar cu acordul tău)</h3>
+      <p>Facem reclame pe Google. Dacă apeși „Accept” în mesajul de pe site, folosim eticheta Google Ads (Google Ireland Ltd.) ca să aflăm câți vizitatori vin din reclame și câți ne sună sau ne scriu. Google poate pune cookie-uri precum _gcl_au, cu o durată de până la 90 de zile. Nu folosim Google Analytics și nici Facebook Pixel.</p>
+      <p>Dacă apeși „Refuz”, nu se pun cookie-uri de marketing. Google primește doar semnale fără cookie-uri despre faptul că pagina a fost vizitată, conform modului de consimțământ Google. Site-ul funcționează la fel în ambele cazuri.</p>
       <p>Fonturile site-ului se încarcă de la Google Fonts. Acest serviciu nu folosește cookie-uri, dar browserul tău îi transmite adresa IP ca să descarce fonturile.</p>
 
-      <h3>2. Linkuri externe</h3>
+      <h3>3. Linkuri externe</h3>
       <p>Butonul de WhatsApp și linkurile către alte site-uri (de exemplu ANPC sau ANSPDCP) te duc pe site-uri care au propriile politici de cookie-uri. Nu controlăm cookie-urile acelor site-uri.</p>
 
-      <h3>3. Cum controlezi cookie-urile</h3>
-      <p>Poți șterge sau bloca oricând cookie-urile din setările browserului. Site-ul va funcționa și dacă le blochezi.</p>
-
-      <h3>4. Dacă se schimbă ceva</h3>
-      <p>Dacă vom adăuga instrumente de măsurare a traficului sau de marketing, îți vom cere acordul înainte, printr-un mesaj pe site, și vom actualiza această pagină.</p>
+      <h3>4. Cum îți schimbi alegerea</h3>
+      <p><button type="button" class="btn" onclick="window.ovConsentOpen&&ovConsentOpen()">Schimbă setările cookie-urilor</button></p>
+      <p>Poți și șterge sau bloca oricând cookie-urile din setările browserului.</p>
       <p>Întrebări: office@ocasvent.ro.</p>
     </article>
 
@@ -1271,5 +1280,13 @@ document.getElementById('f').addEventListener('submit',function(e){e.preventDefa
   window.open(wa,'_blank','noopener');
 });
 </script>
+<div id="ovcc" role="dialog" aria-live="polite" aria-label="Cookie-uri" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:#0E1A24;color:#F3F6F8;border-radius:14px;padding:16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.3);font:14px/1.45 'IBM Plex Sans',system-ui,sans-serif">
+<p style="margin:0 0 12px">Folosim cookie-uri Google Ads doar ca să vedem câți clienți vin din reclame. Le punem numai dacă ești de acord. <a href="/#cookies" style="color:#6FAAF0">Detalii</a></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="ovcc-yes" style="flex:1;min-width:120px;padding:10px 14px;border:0;border-radius:10px;background:#1B6FD1;color:#fff;font-weight:600;cursor:pointer">Accept</button><button type="button" id="ovcc-no" style="flex:1;min-width:120px;padding:10px 14px;border:1px solid #5A6B78;border-radius:10px;background:transparent;color:#F3F6F8;font-weight:600;cursor:pointer">Refuz</button></div></div>
+<script>(function(){var b=document.getElementById('ovcc');function g(){try{return localStorage.getItem('ov_consent')}catch(e){return null}}function s(v){try{localStorage.setItem('ov_consent',v)}catch(e){}}
+function set(v){s(v);gtag('consent','update',v==='yes'?{ad_storage:'granted',ad_user_data:'granted'}:{ad_storage:'denied',ad_user_data:'denied'});b.hidden=true;}
+document.getElementById('ovcc-yes').onclick=function(){set('yes')};document.getElementById('ovcc-no').onclick=function(){set('no')};
+window.ovConsentOpen=function(){b.hidden=false};if(!g())b.hidden=false;
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me"]');if(a)gtag('event',a.href.indexOf('tel:')===0?'click_telefon':'click_whatsapp',{link_url:a.href});});})();</script>
 </body>
 </html>
