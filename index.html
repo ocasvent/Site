@@ -1287,6 +1287,6 @@ document.getElementById('f').addEventListener('submit',function(e){e.preventDefa
 function set(v){s(v);gtag('consent','update',v==='yes'?{ad_storage:'granted',ad_user_data:'granted'}:{ad_storage:'denied',ad_user_data:'denied'});b.hidden=true;}
 document.getElementById('ovcc-yes').onclick=function(){set('yes')};document.getElementById('ovcc-no').onclick=function(){set('no')};
 window.ovConsentOpen=function(){b.hidden=false};if(!g())b.hidden=false;
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me"]');if(a)gtag('event',a.href.indexOf('tel:')===0?'click_telefon':'click_whatsapp',{link_url:a.href});});})();</script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me"]');if(a)ovConv(a.href);});window.ovConv=function(u){gtag('event','conversion',{send_to:'AW-18543638531/psx5CKmJurAdEIPwpYpF',value:1.0,currency:'RON'});gtag('event',String(u).indexOf('tel:')===0?'click_telefon':'click_whatsapp',{link_url:u});};var wo=window.open;window.open=function(u){try{if(u&&String(u).indexOf('wa.me')>-1)ovConv(u)}catch(e){}return wo.apply(window,arguments)};})();</script>
 </body>
 </html>
