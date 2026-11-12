@@ -341,7 +341,7 @@ header .wrap.nav{max-width:1280px}
 .svc-link{color:var(--cold);font-weight:600;font-size:.92rem;text-decoration:none}
 .mnt-size{display:flex;flex-wrap:wrap;gap:8px}
 .mnt-size label{cursor:pointer}
-.mnt-size input{position:absolute;opacity:0;pointer-events:none}
+.mnt-size label{position:relative}.mnt-size input{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
 .mnt-size span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid var(--line);border-radius:4px;font-weight:600;font-size:.92rem;background:var(--surface)}
 .mnt-size input:checked+span{border-color:var(--cold);background:color-mix(in srgb,var(--cold) 12%,var(--surface));color:var(--cold)}
 .mnt-size input:focus-visible+span{outline:2px solid var(--cold);outline-offset:2px}
@@ -357,6 +357,16 @@ header .wrap.nav{max-width:1280px}
 .hero-pill svg{color:#7FC4FF;flex:none}
 /* packages */
 .pk{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.promo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:0;margin:0 0 28px;border:2px solid var(--warm);border-radius:6px;overflow:hidden;background:var(--surface)}
+.promo img{width:100%;height:100%;object-fit:cover;display:block;min-height:200px}
+.promo-b{padding:22px;display:grid;gap:10px;align-content:center}
+.promo-tag{display:inline-block;justify-self:start;background:var(--warm);color:#fff;font:600 .75rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:3px}
+.promo h3{margin:0;font:800 clamp(1.4rem,3vw,1.9rem)/1.1 var(--f-display)}
+.promo .pp{font:800 clamp(1.8rem,4vw,2.4rem)/1 var(--f-display);color:var(--warm)}
+.promo .pp small{display:block;font:400 .85rem/1.4 var(--f-body);color:var(--muted);margin-top:4px}
+.promo ul{margin:0;padding-left:18px;color:var(--muted)}
+.promo .btns{display:flex;flex-wrap:wrap;gap:10px}
+@media(max-width:760px){.promo{grid-template-columns:1fr}.promo img{max-height:220px}}
 .pk article{display:grid;gap:14px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px;min-width:0}
 .pk .size{font:800 2.4rem/1 var(--f-display);font-stretch:75%;font-variant-numeric:tabular-nums}
 .pk .size small{font:500 .8rem var(--f-mono);color:var(--muted);margin-left:6px}
@@ -521,6 +531,17 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
         <h2>Aparat + montaj, la preț fix</h2>
         <p>Alegi puterea după suprafața camerei. Prețul e pentru pachetul complet: aparat, kit de montaj și manoperă, fără costuri ascunse.</p>
       </div>
+      <div class="promo" id="promotie" data-until="2026-12-15T23:59:59+02:00">
+        <img src="img/2eb905a5fd.jpg" alt="Aparat de aer condiționat Vortex 12.000 BTU în stoc" loading="lazy">
+        <div class="promo-b">
+          <span class="promo-tag">Promoție până pe 15 decembrie</span>
+          <h3>Vortex Inverter 12.000 BTU, cu montaj inclus</h3>
+          <div class="pp">2.350 lei<small>preț final cu TVA: aparat + kit de montaj + manoperă montaj standard</small></div>
+          <ul><li>Inverter A++, agent R32, încălzește și răcește</li><li>Pentru camere de 20–35 m²</li><li>3 ani garanție producător, 12 luni garanție manoperă</li><li>Montaj standard, aceleași condiții ca la pachetele Ferroli</li></ul>
+          <div class="btns"><a class="btn primary" href="https://wa.me/40752632558?text=Bun%C4%83%20ziua%21%20Sunt%20interesat%20de%20promo%C8%9Bia%20Vortex%2012.000%20BTU%20cu%20montaj%20inclus%20%282.350%20lei%29.%20Localitatea%3A%20" target="_blank" rel="noopener">Comandă pe WhatsApp</a><a class="btn" href="tel:+40752632558">Sună: 0752 632 558</a></div>
+          <span class="label">Model VAI1223FFWOKWR · în limita stocului</span>
+        </div>
+      </div>
       <div class="btu" id="putere">
         <div class="btu-in">
           <h3>Ce putere îți trebuie?</h3>
@@ -574,7 +595,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
       </div>
       <div class="extra" id="calculator">
         <div class="extra-head"><h3>Calculează-ți lucrarea</h3><p>Alege pachetul, apoi bifează lucrările suplimentare de care ai nevoie și scrie cantitatea. Vezi pe loc prețul final, cu TVA inclus.</p></div>
-        <label class="calc-pk" for="calcpk"><span>Pachet sau montaj</span><select id="calcpk"><option value="0">Fără pachet, doar lucrări suplimentare</option><option value="2950">Pachet Ferroli Giada S 9 (9.000 BTU)</option><option value="3000">Pachet Ferroli Giada S 12 (12.000 BTU)</option><option value="4650">Pachet Ferroli Giada S 18 (18.000 BTU)</option><option value="5950">Pachet Ferroli Giada S 24 (24.000 BTU)</option><option value="5995">Pachet Ferroli Giada M18-2 (2 camere)</option><option value="8560">Pachet Ferroli Giada M27-3 (3 camere)</option><option value="1271">Doar montaj, aparat 7.000–12.000 BTU</option><option value="1573">Doar montaj, aparat 18.000 BTU</option><option value="1755">Doar montaj, aparat 24.000 BTU</option><option value="2481">Doar montaj, dual split</option><option value="3691">Doar montaj, trial split</option></select></label>
+        <label class="calc-pk" for="calcpk"><span>Pachet sau montaj</span><select id="calcpk"><option value="0">Fără pachet, doar lucrări suplimentare</option><option value="2950">Pachet Ferroli Giada S 9 (9.000 BTU)</option><option value="3000">Pachet Ferroli Giada S 12 (12.000 BTU)</option><option value="2350" class="promo-opt">Promoție Vortex 12.000 BTU (până pe 15.12)</option><option value="4650">Pachet Ferroli Giada S 18 (18.000 BTU)</option><option value="5950">Pachet Ferroli Giada S 24 (24.000 BTU)</option><option value="5995">Pachet Ferroli Giada M18-2 (2 camere)</option><option value="8560">Pachet Ferroli Giada M27-3 (3 camere)</option><option value="1271">Doar montaj, aparat 7.000–12.000 BTU</option><option value="1573">Doar montaj, aparat 18.000 BTU</option><option value="1755">Doar montaj, aparat 24.000 BTU</option><option value="2481">Doar montaj, dual split</option><option value="3691">Doar montaj, trial split</option></select></label>
         <ul class="extra-list calc-list">
           <li><label class="ex-c" for="exc0"><input id="exc0" type="checkbox" data-price="110" data-name="Deplasare Florești, Gilău, Jucu" data-unit=""><span>Deplasare Florești, Gilău, Jucu</span></label><span class="ex-q ex-fix">preț fix</span><b>110 lei</b></li>
           <li><label class="ex-c" for="exc1"><input id="exc1" type="checkbox" data-price="72" data-name="Șlițuit perete cărămidă / BCA" data-unit="ml"><span>Șlițuit perete cărămidă / BCA</span></label><label class="ex-q" for="exq1"><span class="sr">Cantitate</span><input id="exq1" type="number" min="1" step="1" value="1" inputmode="numeric" disabled><span>ml</span></label><b>72 lei /ml</b></li>
@@ -1280,6 +1301,7 @@ document.getElementById('f').addEventListener('submit',function(e){e.preventDefa
   window.open(wa,'_blank','noopener');
 });
 </script>
+<script>(function(){var p=document.getElementById('promotie');if(!p)return;if(Date.now()>new Date(p.getAttribute('data-until')).getTime()){p.remove();document.querySelectorAll('.promo-opt').forEach(function(o){o.remove()});}})();</script>
 <div id="ovcc" role="dialog" aria-live="polite" aria-label="Cookie-uri" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:#0E1A24;color:#F3F6F8;border-radius:14px;padding:16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.3);font:14px/1.45 'IBM Plex Sans',system-ui,sans-serif">
 <p style="margin:0 0 12px">Folosim cookie-uri Google Ads doar ca să vedem câți clienți vin din reclame. Le punem numai dacă ești de acord. <a href="/#cookies" style="color:#6FAAF0">Detalii</a></p>
 <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="ovcc-yes" style="flex:1;min-width:120px;padding:10px 14px;border:0;border-radius:10px;background:#1B6FD1;color:#fff;font-weight:600;cursor:pointer">Accept</button><button type="button" id="ovcc-no" style="flex:1;min-width:120px;padding:10px 14px;border:1px solid #5A6B78;border-radius:10px;background:transparent;color:#F3F6F8;font-weight:600;cursor:pointer">Refuz</button></div></div>

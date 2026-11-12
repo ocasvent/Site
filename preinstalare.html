@@ -333,7 +333,7 @@ header .wrap.nav{max-width:1280px}
 .svc-link{color:var(--cold);font-weight:600;font-size:.92rem;text-decoration:none}
 .mnt-size{display:flex;flex-wrap:wrap;gap:8px}
 .mnt-size label{cursor:pointer}
-.mnt-size input{position:absolute;opacity:0;pointer-events:none}
+.mnt-size label{position:relative}.mnt-size input{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
 .mnt-size span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid var(--line);border-radius:4px;font-weight:600;font-size:.92rem;background:var(--surface)}
 .mnt-size input:checked+span{border-color:var(--cold);background:color-mix(in srgb,var(--cold) 12%,var(--surface));color:var(--cold)}
 .mnt-size input:focus-visible+span{outline:2px solid var(--cold);outline-offset:2px}
@@ -349,6 +349,16 @@ header .wrap.nav{max-width:1280px}
 .hero-pill svg{color:#7FC4FF;flex:none}
 /* packages */
 .pk{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.promo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:0;margin:0 0 28px;border:2px solid var(--warm);border-radius:6px;overflow:hidden;background:var(--surface)}
+.promo img{width:100%;height:100%;object-fit:cover;display:block;min-height:200px}
+.promo-b{padding:22px;display:grid;gap:10px;align-content:center}
+.promo-tag{display:inline-block;justify-self:start;background:var(--warm);color:#fff;font:600 .75rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:3px}
+.promo h3{margin:0;font:800 clamp(1.4rem,3vw,1.9rem)/1.1 var(--f-display)}
+.promo .pp{font:800 clamp(1.8rem,4vw,2.4rem)/1 var(--f-display);color:var(--warm)}
+.promo .pp small{display:block;font:400 .85rem/1.4 var(--f-body);color:var(--muted);margin-top:4px}
+.promo ul{margin:0;padding-left:18px;color:var(--muted)}
+.promo .btns{display:flex;flex-wrap:wrap;gap:10px}
+@media(max-width:760px){.promo{grid-template-columns:1fr}.promo img{max-height:220px}}
 .pk article{display:grid;gap:14px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px;min-width:0}
 .pk .size{font:800 2.4rem/1 var(--f-display);font-stretch:75%;font-variant-numeric:tabular-nums}
 .pk .size small{font:500 .8rem var(--f-mono);color:var(--muted);margin-left:6px}
