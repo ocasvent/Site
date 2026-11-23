@@ -365,7 +365,7 @@ header .wrap.nav{max-width:1280px}
 .w-flakes{position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(2px 2px at 20px 30px,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 90px 120px,#fff 50%,transparent 51%),radial-gradient(2.5px 2.5px at 160px 60px,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 230px 170px,#fff 50%,transparent 51%);background-size:260px 220px}
 .w-poem{margin:26px 0 0;padding:18px 22px;border-left:3px solid var(--warm);background:rgba(255,255,255,.05);border-radius:0 8px 8px 0;font:italic 400 1.05rem/1.7 var(--f-body);color:#E7EEF4;max-width:560px}
 .w-poem cite{display:block;margin-top:8px;font:500 .72rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#8FA3B4;font-style:normal}
-.w-models{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px;position:relative}
+.w-models{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),560px));gap:20px;margin-top:36px;position:relative}
 .wm{background:#fff;color:var(--ink,#13202B);border-radius:8px;overflow:hidden;display:grid;align-content:start;min-width:0}
 .wm-top{position:relative;background:#E9EEF2;aspect-ratio:16/8;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .wm-top img{width:100%;height:100%;object-fit:cover;display:block}
@@ -573,28 +573,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
           </div>
         </article>
 
-        <article class="wm" id="emperor">
-          <div class="wm-top"><span class="wm-badge alt">Silențios și elegant</span><img src="img/emperor-oficial.jpg" alt="Inventor Emperor negru, unitate interioară" loading="lazy"></div>
-          <div class="wm-b">
-            <h3>Inventor Emperor</h3>
-            <p class="sub">Design negru premium, aproape fără zgomot. Încălzește până la −20°C.</p>
-            <div class="wm-specs">
-              <div><b>A++</b><span>clasă pe încălzire</span></div>
-              <div><b>4,6</b><span>SCOP încălzire</span></div>
-              <div><b>16 dB</b><span>mod ultra-silențios</span></div>
-            </div>
-            <ul>
-              <li>Cel mai liniștit din gamă: <b>16–17 dB</b> în interior, <b>47–48 dB</b> afară</li>
-              <li>Tehnologie <b>UV-C și ionizator</b> pentru aer curat, plus filtru HEPA</li>
-              <li>Mod <b>Triplu Eco</b> și senzor de mișcare, care reduce consumul când nu ești în cameră</li>
-              <li>Wi-Fi inclus, funcția Follow Me, A+++ pe răcire vara</li>
-              <li>Disponibil la 9.000, 12.000, 18.000 și 24.000 BTU</li>
-            </ul>
-            <p class="wm-fit c">Potrivit pentru: apartamente, dormitoare și living-uri unde contează liniștea și aspectul. Încălzește foarte bine în iernile din Cluj.</p>
-            <div class="wm-price"><strong>Preț cu montaj inclus: în curând</strong><small>9.000 · 12.000 · 18.000 · 24.000 BTU</small></div>
-            <div class="btns"><a class="btn primary" href="https://wa.me/40752632558?text=Bun%C4%83%20ziua%21%20M%C4%83%20intereseaz%C4%83%20aerul%20condi%C8%9Bionat%20Inventor%20EMPEROR.%20Camera%20are%20___%20m%C2%B2%2C%20localitatea%3A%20" target="_blank" rel="noopener">Cere ofertă pe WhatsApp</a><a class="btn" href="tel:+40752632558">Sună</a></div>
-          </div>
-        </article>
+        
       </div>
 
       <div class="w-calc" id="calcul-iarna">
@@ -603,7 +582,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
         <div class="wc-grid">
           <label>Suprafața camerei (m²)<input id="wc-m2" type="number" min="5" max="200" value="20" inputmode="numeric"></label>
           <label>Izolația casei<select id="wc-iz"><option value="b">Bună (casă nouă, termopan, izolată)</option><option value="m" selected>Medie (bloc izolat, casă mai veche renovată)</option><option value="s">Slabă (neizolată, geamuri vechi)</option></select></label>
-          <label>Aparatul<select id="wc-ap"><optgroup label="Inventor Thora · recomandat iarna"><option value="5.1">Thora 9.000 BTU · A+++ · SCOP 5,1</option><option value="5.1">Thora 12.000 BTU · A+++ · SCOP 5,1</option><option value="4.6">Thora 18.000 BTU · A++ · SCOP 4,6</option></optgroup><optgroup label="Inventor Emperor · silențios"><option value="4.6">Emperor 9.000 BTU · A++ · SCOP 4,6</option><option value="4.6">Emperor 12.000 BTU · A++ · SCOP 4,6</option><option value="4.6">Emperor 18.000 BTU · A++ · SCOP 4,6</option><option value="4.6">Emperor 24.000 BTU · A++ · SCOP 4,6</option></optgroup></select></label>
+          <label>Aparatul<select id="wc-ap"><optgroup label="Inventor Thora · recomandat iarna"><option value="5.1">Thora 9.000 BTU · A+++ · SCOP 5,1</option><option value="5.1">Thora 12.000 BTU · A+++ · SCOP 5,1</option><option value="4.6">Thora 18.000 BTU · A++ · SCOP 4,6</option></optgroup></select></label>
           <label>Preț curent (lei/kWh)<input id="wc-pe" type="number" step="0.01" min="0.1" value="1.30" inputmode="decimal"></label>
           <label>Preț gaz (lei/kWh)<input id="wc-pg" type="number" step="0.01" min="0.05" value="0.35" inputmode="decimal"></label><label>Lemne (lei/metru ster)<input id="wc-pl" type="number" step="10" min="50" value="450" inputmode="numeric"></label><label>Peleți (lei/sac de 15 kg)<input id="wc-pp" type="number" step="1" min="5" value="26" inputmode="numeric"></label>
         </div>
@@ -619,7 +598,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
 
       <div class="w-know">
         <article><span class="k">01 · SCOP</span><h4>Ce înseamnă SCOP 5,1?</h4><p>Pe toată iarna, la fiecare 1 kWh de curent plătit, aparatul îți dă în medie 5,1 kWh de căldură. Un calorifer electric dă doar 1 kWh. De aici vine economia.</p></article>
-        <article><span class="k">02 · Ger</span><h4>Încălzește și la −15°C?</h4><p>Da. Pe frig, randamentul scade puțin, dar Thora are rezervă de putere până la 7,2 kW și funcționează până la −35°C. Emperor merge până la −20°C, suficient pentru iernile din Cluj.</p></article>
+        <article><span class="k">02 · Ger</span><h4>Încălzește și la −15°C?</h4><p>Da. Pe frig randamentul scade puțin, dar aparatele pe care le recomandăm sunt făcute pentru ierni grele: funcționează până la −30°C … −35°C și au rezervă de putere pentru zilele cu ger.</p></article>
         <article><span class="k">03 · Dezghețare</span><h4>De ce se oprește uneori afară?</h4><p>Pe frig umed, pe unitatea exterioară se depune gheață. Aparatul o topește singur câteva minute, apoi reia încălzirea. E normal. Rezistența de la Thora face ca asta să se întâmple mai rar.</p></article>
         <article><span class="k">04 · Setări</span><h4>Cum îl folosești iarna</h4><p>Setează 20–22°C și lasă-l pornit. Un inverter consumă mai puțin când menține temperatura decât când reîncălzește camera de la zero. Folosește modul Eco noaptea.</p></article>
         <article><span class="k">05 · Montaj</span><h4>Ce contează la montaj</h4><p>Iarna, unitatea exterioară scoate apă la dezghețare. O montăm pe console sau suport la cel puțin 20–30 cm deasupra zăpezii, cu scurgere care nu îngheață pe trotuar sau pe balcon.</p></article>
@@ -1464,9 +1443,9 @@ $('wc-acm').textContent=f(ac*pe/7)+' lei';
 $('wc-el').textContent=f(q*pe)+' lei';$('wc-elk').textContent=f(q)+' kWh curent';
 $('wc-gz').textContent=f(gz*pg)+' lei';$('wc-gzk').textContent=f(gz)+' kWh gaz';var pl=parseFloat($('wc-pl').value)||0,pp=parseFloat($('wc-pp').value)||0,st=q/(1600*0.7),kg=q/(4.8*0.88);$('wc-lm').textContent=f(st*pl)+' lei';$('wc-lmk').textContent=(Math.round(st*10)/10).toString().replace('.',',')+' metri ster';$('wc-pt').textContent=f(kg/15*pp)+' lei';$('wc-ptk').textContent=Math.ceil(kg/15)+' saci de 15 kg';
 var save=q*pe-ac*pe,load=a*L[iz],r;
-if(load<=3800)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Ajunge un <b>Thora 9.000 sau 12.000 BTU</b> (3,8 kW nominal, până la 7,2 kW) sau un <b>Emperor 12.000 BTU</b>.';
-else if(load<=5600)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Recomandăm <b>Thora 18.000 BTU</b> sau <b>Emperor 18.000 BTU</b>.';
-else r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură. Recomandăm <b>Emperor 24.000 BTU</b> sau două aparate în camere diferite. Te sfătuim gratuit pe WhatsApp.';
+if(load<=3800)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Ajunge un <b>Thora 9.000 sau 12.000 BTU</b> (3,8 kW nominal, până la 7,2 kW).';
+else if(load<=5600)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Recomandăm <b>Thora 18.000 BTU</b>.';
+else r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură. Recomandăm două aparate în camere diferite sau un sistem multisplit. Te sfătuim gratuit pe WhatsApp.';
 $('wc-rec').innerHTML=r+' Estimativ, față de un calorifer electric, diferența ar fi de aproximativ <b>'+f(save)+' lei</b> pe iarnă.';}
 ['wc-m2','wc-iz','wc-ap','wc-pe','wc-pg','wc-pl','wc-pp'].forEach(function(i){$(i).addEventListener('input',up);$(i).addEventListener('change',up)});up();})();</script>
 </body>
