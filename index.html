@@ -608,13 +608,13 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
           <label>Preț gaz (lei/kWh)<input id="wc-pg" type="number" step="0.01" min="0.05" value="0.35" inputmode="decimal"></label>
         </div>
         <div class="wc-out" aria-live="polite">
-          <div class="hl"><span>Aer condiționat · toată iarna</span><b id="wc-ac">–</b><small id="wc-ack">–</small></div>
+          <div class="hl"><span>Aer condiționat · estimat pe iarnă</span><b id="wc-ac">–</b><small id="wc-ack">–</small></div>
           <div><span>Aer condiționat · pe lună</span><b id="wc-acm">–</b><small>medie octombrie–aprilie</small></div>
-          <div><span>Calorifer electric · toată iarna</span><b id="wc-el">–</b><small id="wc-elk">–</small></div>
-          <div><span>Centrală pe gaz · toată iarna</span><b id="wc-gz">–</b><small id="wc-gzk">–</small></div>
+          <div><span>Calorifer electric · estimat</span><b id="wc-el">–</b><small id="wc-elk">–</small></div>
+          <div><span>Centrală pe gaz · estimat</span><b id="wc-gz">–</b><small id="wc-gzk">–</small></div>
         </div>
         <div class="wc-rec" id="wc-rec">–</div>
-        <p class="wc-note">Calculul e o estimare pentru o singură cameră încălzită la 21°C, pe un sezon de încălzire din zona Clujului, octombrie–aprilie. Folosește SCOP-ul declarat de producător pentru clima medie (EN 14825). Consumul real depinde de izolație, de temperatura setată, de cât de des aerisești și de cât de rece e iarna. Prețurile de energie le poți schimba după factura ta, cu TVA inclus.</p>
+        <p class="wc-note">Calculul e o estimare pentru o singură cameră încălzită la 21°C, pe un sezon de încălzire din zona Clujului, octombrie–aprilie. Pornește de la SCOP-ul declarat de producător pentru clima medie (EN 14825), redus cu 15% pentru iernile mai reci din Transilvania. Centrala pe gaz e calculată cu un randament de 90%. Consumul real depinde de izolație, de temperatura setată, de cât de des aerisești și de cât de rece e iarna. Prețurile de energie le poți schimba după factura ta, cu TVA inclus. Rezultatul e orientativ și nu reprezintă o garanție de consum. Pentru un calcul pe casa ta, te ajutăm gratuit.</p>
       </div>
 
       <div class="w-know">
@@ -1456,9 +1456,9 @@ window.ovConsentOpen=function(){b.hidden=false};if(!g())b.hidden=false;
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me"]');if(a)ovConv(a.href);});window.ovConv=function(u){gtag('event','conversion',{send_to:'AW-18543638531/psx5CKmJurAdEIPwpYpF',value:1.0,currency:'RON'});gtag('event',String(u).indexOf('tel:')===0?'click_telefon':'click_whatsapp',{link_url:u});};var wo=window.open;window.open=function(u){try{if(u&&String(u).indexOf('wa.me')>-1)ovConv(u)}catch(e){}return wo.apply(window,arguments)};})();</script>
 <script>(function(){var $=function(i){return document.getElementById(i)};if(!$('wc-m2'))return;
 var Q={b:55,m:95,s:150},L={b:50,m:70,s:100};
-function f(n){return Math.round(n).toLocaleString('ro-RO')}
+function f(n){return (Math.round(n/10)*10).toLocaleString('ro-RO')}
 function up(){var a=Math.max(0,parseFloat($('wc-m2').value)||0),iz=$('wc-iz').value,sc=parseFloat($('wc-ap').value)||4.6,pe=parseFloat($('wc-pe').value)||0,pg=parseFloat($('wc-pg').value)||0;
-var q=a*Q[iz],ac=q/sc,gz=q/0.9;
+var q=a*Q[iz],ac=q/(sc*0.85),gz=q/0.9;
 $('wc-ac').textContent=f(ac*pe)+' lei';$('wc-ack').textContent=f(ac)+' kWh curent';
 $('wc-acm').textContent=f(ac*pe/7)+' lei';
 $('wc-el').textContent=f(q*pe)+' lei';$('wc-elk').textContent=f(q)+' kWh curent';
@@ -1467,7 +1467,7 @@ var save=q*pe-ac*pe,load=a*L[iz],r;
 if(load<=3800)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Ajunge un <b>Thora 9.000 sau 12.000 BTU</b> (3,8 kW nominal, până la 7,2 kW) sau un <b>Emperor 12.000 BTU</b>.';
 else if(load<=5600)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Recomandăm <b>Thora 18.000 BTU</b> sau <b>Emperor 18.000 BTU</b>.';
 else r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură. Recomandăm <b>Emperor 24.000 BTU</b> sau două aparate în camere diferite. Te sfătuim gratuit pe WhatsApp.';
-$('wc-rec').innerHTML=r+' Față de un calorifer electric economisești aproximativ <b>'+f(save)+' lei</b> pe iarnă.';}
+$('wc-rec').innerHTML=r+' Estimativ, față de un calorifer electric, diferența ar fi de aproximativ <b>'+f(save)+' lei</b> pe iarnă.';}
 ['wc-m2','wc-iz','wc-ap','wc-pe','wc-pg'].forEach(function(i){$(i).addEventListener('input',up);$(i).addEventListener('change',up)});up();})();</script>
 </body>
 </html>
