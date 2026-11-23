@@ -560,14 +560,14 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
               <div><b>−25°C</b><span>funcționează până la</span></div>
             </div>
             <ul>
-              <li>Putere maximă de încălzire: <b>4,4 kW</b> (9k), <b>4,5 kW</b> (12k), <b>6,8 kW</b> (18k), <b>8,2 kW</b> (24k)</li>
+              <li>Putere maximă de încălzire: <b>4,4 kW</b> (9k), <b>4,5 kW</b> (12k), <b>6,8 kW</b> (18k)</li>
               <li><b>Centură de încălzire pe unitatea exterioară</b>: pornește sigur pe ger și se dezgheață mai rar</li>
               <li>Tehnologie <b>UV-C și ionizator</b>, senzor de mișcare</li>
               <li>Silențios: de la <b>20 dB</b> în interior</li>
               <li>Wi-Fi inclus, agent R32, certificare Eurovent</li>
             </ul>
             <p class="wm-fit">Potrivit pentru: case la curte, mansarde, case de vacanță și oricine vrea să încălzească iarna cu aerul condiționat.</p>
-            <div class="wm-price"><strong>Preț cu montaj inclus: în curând</strong><small>9.000 · 12.000 · 18.000 · 24.000 BTU</small></div>
+            <div class="wm-price"><strong>Preț cu montaj inclus: în curând</strong><small>9.000 · 12.000 · 18.000 BTU · stoc limitat</small></div>
             <div class="btns"><a class="btn primary" href="https://wa.me/40752632558?text=Bun%C4%83%20ziua%21%20M%C4%83%20intereseaz%C4%83%20aerul%20condi%C8%9Bionat%20Inventor%20LEON%20pentru%20%C3%AEnc%C4%83lzire.%20Camera%20are%20___%20m%C2%B2%2C%20localitatea%3A%20" target="_blank" rel="noopener">Cere ofertă pe WhatsApp</a><a class="btn" href="tel:+40752632558">Sună</a></div>
           </div>
         </article>
@@ -581,7 +581,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
         <div class="wc-grid">
           <label>Suprafața camerei (m²)<input id="wc-m2" type="number" min="5" max="200" value="20" inputmode="numeric"></label>
           <label>Izolația casei<select id="wc-iz"><option value="b">Bună (casă nouă, termopan, izolată)</option><option value="m" selected>Medie (bloc izolat, casă mai veche renovată)</option><option value="s">Slabă (neizolată, geamuri vechi)</option></select></label>
-          <label>Aparatul<select id="wc-ap"><optgroup label="Inventor Leon · până la −25°C"><option value="4.6">Leon 9.000 BTU · A++ · SCOP 4,6</option><option value="4.6">Leon 12.000 BTU · A++ · SCOP 4,6</option><option value="4.3">Leon 18.000 BTU · A+ · SCOP 4,3</option><option value="4.2">Leon 24.000 BTU · A+ · SCOP 4,2</option></optgroup></select></label>
+          <label>Aparatul<select id="wc-ap"><optgroup label="Inventor Leon · până la −25°C"><option value="4.6">Leon 9.000 BTU · A++ · SCOP 4,6</option><option value="4.6">Leon 12.000 BTU · A++ · SCOP 4,6</option><option value="4.3">Leon 18.000 BTU · A+ · SCOP 4,3</option></optgroup></select></label>
           <label>Preț curent (lei/kWh)<input id="wc-pe" type="number" step="0.01" min="0.1" value="1.30" inputmode="decimal"></label>
           <label>Preț gaz (lei/kWh)<input id="wc-pg" type="number" step="0.01" min="0.05" value="0.35" inputmode="decimal"></label><label>Lemne (lei/metru ster)<input id="wc-pl" type="number" step="10" min="50" value="450" inputmode="numeric"></label><label>Peleți (lei/sac de 15 kg)<input id="wc-pp" type="number" step="1" min="5" value="26" inputmode="numeric"></label>
         </div>
@@ -1444,7 +1444,7 @@ $('wc-gz').textContent=f(gz*pg)+' lei';$('wc-gzk').textContent=f(gz)+' kWh gaz';
 var save=q*pe-ac*pe,load=a*L[iz],r;
 if(load<=4400)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Recomandăm <b>Leon 9.000 sau 12.000 BTU</b> (până la 4,5 kW).';
 else if(load<=6700)r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură pe ger. Recomandăm <b>Leon 18.000 BTU</b> (până la 6,8 kW).';
-else r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură. Recomandăm <b>Leon 24.000 BTU</b> (până la 8,2 kW) sau două aparate în camere diferite. Te sfătuim gratuit pe WhatsApp.';
+else r='Pentru <b>'+f(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură. Recomandăm două aparate Leon în camere diferite. Te sfătuim gratuit pe WhatsApp. Te sfătuim gratuit pe WhatsApp.';
 $('wc-rec').innerHTML=r+' Estimativ, față de un calorifer electric, diferența ar fi de aproximativ <b>'+f(save)+' lei</b> pe iarnă.';}
 ['wc-m2','wc-iz','wc-ap','wc-pe','wc-pg','wc-pl','wc-pp'].forEach(function(i){$(i).addEventListener('input',up);$(i).addEventListener('change',up)});up();})();</script>
 </body>
