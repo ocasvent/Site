@@ -66,6 +66,13 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var
 .brand b{font:800 1.15rem/1 var(--f-display);font-stretch:80%;letter-spacing:.02em}
 .brand small{display:block;font:500 .62rem/1.3 var(--f-mono);letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
 .links{display:flex;align-items:center;gap:2px;font-weight:600;font-size:.93rem;margin-left:auto;padding-right:14px;border-right:1px solid var(--line)}
+.pc-form{margin-top:32px;max-width:760px;background:#fff;border:1px solid #E2E8ED;border-radius:8px;padding:clamp(18px,3vw,28px);display:grid;gap:14px}
+.pc-form h3{margin:0;font:800 1.4rem/1.15 var(--f-display);font-stretch:85%}.pc-form>p{margin:0;color:var(--muted,#5A6B78)}
+.pc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pc-form label{display:grid;gap:5px;font:600 .78rem/1.2 var(--f-body);color:#33434F}
+.pc-form input,.pc-form select,.pc-form textarea{font:400 1rem/1.3 var(--f-body);padding:10px 12px;border:1px solid #CBD5DD;border-radius:6px;background:#fff;color:#13202B;width:100%;box-sizing:border-box}
+.pc-est{background:#EEF5FD;color:#174A87;border-radius:6px;padding:12px 14px}.pc-note{font-size:.88rem;color:#5A6B78;margin:0}
+@media(max-width:620px){.pc-grid{grid-template-columns:1fr}}
 .winter-bar{display:block;background:#E8642A;color:#fff;text-align:center;text-decoration:none;padding:10px 16px;font:500 .95rem/1.4 var(--f-body)}.winter-bar span{white-space:nowrap;text-decoration:underline;text-underline-offset:3px;margin-left:6px;font-weight:600}.winter-bar:hover{background:#cf5420}
 .links a.nav-iarna{background:#E8642A;color:#fff;font-weight:700;margin-right:6px;box-shadow:0 2px 8px rgba(232,100,42,.35)}.links a.nav-iarna:hover{background:#cf5420;color:#fff}
 @media(max-width:1100px){.links a.nav-iarna{margin:8px 0;border-radius:6px;border-bottom:0;text-align:center}}
@@ -668,6 +675,30 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;colo
           </div>
         </article>
       </div>
+      <form class="pc-form" id="pc-form" novalidate>
+        <h3>Chestionar pentru ofertă: 2 minute</h3>
+        <p>Răspunde la ce știi. Îți calculăm puterea potrivită și revenim cu o ofertă orientativă, apoi stabilim o vizită.</p>
+        <div class="pc-grid">
+          <label>Localitatea<input name="loc" type="text" placeholder="ex. Florești"></label>
+          <label>Suprafața încălzită (m²)<input name="m2" type="number" placeholder="ex. 140"></label>
+          <label>Câte niveluri are casa<select name="niv"><option value="">Alege…</option><option>Parter</option><option>Parter + etaj / mansardă</option><option>Demisol + parter + etaj</option></select></label>
+          <label>Izolația casei<select name="iz"><option value="">Alege…</option><option>Casă nouă, bine izolată (după 2015)</option><option>Izolată ulterior (polistiren / vată, termopan)</option><option>Parțial izolată</option><option>Neizolată</option></select></label>
+          <label>Cum te încălzești acum<select name="inc"><option value="">Alege…</option><option>Centrală pe gaz</option><option>Lemne / sobă</option><option>Peleți</option><option>Curent electric</option><option>Nimic încă (casă nouă)</option><option>Altceva</option></select></label>
+          <label>Ce ai în casă<select name="dist"><option value="">Alege…</option><option>Calorifere</option><option>Încălzire în pardoseală</option><option>Calorifere + pardoseală</option><option>Ventiloconvectoare</option><option>Nimic încă</option></select></label>
+          <label>Apă caldă menajeră<select name="acm"><option value="">Alege…</option><option>Da, cu boiler nou (vreau și boiler)</option><option>Da, am deja boiler</option><option>Nu, doar încălzire</option></select></label>
+          <label>Câte persoane în casă<select name="pers"><option value="">Alege…</option><option>1–2</option><option>3–4</option><option>5 sau mai multe</option></select></label>
+          <label>Alimentarea cu curent<select name="cur"><option value="">Alege…</option><option>Monofazic</option><option>Trifazic</option><option>Nu știu</option></select></label>
+          <label>Centrala existentă<select name="cen"><option value="">Alege…</option><option>O înlocuiesc complet</option><option>O păstrez ca rezervă</option><option>Nu am centrală</option></select></label>
+          <label>Ai sau vrei panouri fotovoltaice<select name="pv"><option value="">Alege…</option><option>Am deja</option><option>Vreau în viitor</option><option>Nu</option></select></label>
+          <label>Loc pentru unitatea de afară<select name="ext"><option value="">Alege…</option><option>Da, în curte / pe teren</option><option>Da, pe un perete sau terasă</option><option>Nu sunt sigur</option></select></label>
+          <label>Când vrei lucrarea<select name="cand"><option value="">Alege…</option><option>Cât mai repede</option><option>În 1–3 luni</option><option>Primăvară / vară</option><option>Doar mă informez</option></select></label>
+          <label>Numele tău<input name="nume" type="text" placeholder=""></label>
+        </div>
+        <label class="pc-full">Altceva important?<textarea name="obs" rows="3" placeholder="ex. vreau și răcire vara, casa are șemineu, am deja vas tampon…"></textarea></label>
+        <div class="pc-est" id="pc-est" hidden></div>
+        <p class="pc-note">După ce trimiți, poți atașa în WhatsApp poze cu centrala sau camera tehnică, caloriferele și locul pentru unitatea de afară. Ne ajută să facem oferta mai precisă.</p>
+        <button type="submit" class="btn primary">Trimite pe WhatsApp</button>
+      </form>
     </div>
   </section>
 
@@ -1518,5 +1549,14 @@ else if(load<=5600)r='Pentru <b>'+Math.round(a)+' m²</b> îți trebuie cam <b>'
 else r='Pentru <b>'+Math.round(a)+' m²</b> îți trebuie cam <b>'+(load/1000).toFixed(1).replace('.',',')+' kW</b> de căldură. Recomandăm două aparate în camere diferite. Te sfătuim gratuit pe WhatsApp.';
 $('wc-rec').innerHTML=r+' Estimativ, față de un calorifer electric, diferența ar fi de aproximativ <b>'+f(save)+' lei</b> pe iarnă.';}
 ['wc-m2','wc-iz','wc-ap','wc-pe','wc-pg','wc-pl','wc-pp'].forEach(function(i){$(i).addEventListener('input',up);$(i).addEventListener('change',up)});up();})();</script>
+<script>(function(){var f=document.getElementById('pc-form');if(!f)return;var est=document.getElementById('pc-est');
+var W={'Casă nouă, bine izolată (după 2015)':50,'Izolată ulterior (polistiren / vată, termopan)':65,'Parțial izolată':85,'Neizolată':110};
+function kw(){var a=parseFloat(f.m2.value)||0,w=W[f.iz.value];if(!a||!w){est.hidden=true;return null}
+var k=a*w/1000,sz=[4,6,8,10,12,14,16].find(function(x){return x>=k})||null;
+est.innerHTML='Estimare orientativă: îți trebuie în jur de <b>'+k.toFixed(1).replace('.',',')+' kW</b> pe ger. '+(sz?'Ar merge un <b>Omnia Life M '+sz+' kW</b>'+(sz>=12?' (trifazic)':'')+'.':'Pentru o casă atât de mare recomandăm două pompe în cascadă.')+' Confirmăm puterea exactă după vizită.';est.hidden=false;return k}
+f.addEventListener('input',kw);f.addEventListener('change',kw);
+f.addEventListener('submit',function(e){e.preventDefault();var k=kw(),L=[['Localitate','loc'],['Suprafață încălzită (m²)','m2'],['Niveluri','niv'],['Izolație','iz'],['Încălzire acum','inc'],['Distribuție','dist'],['Apă caldă','acm'],['Persoane','pers'],['Curent','cur'],['Centrala existentă','cen'],['Fotovoltaice','pv'],['Unitate exterioară','ext'],['Termen','cand'],['Nume','nume'],['Alte detalii','obs']];
+var t='Bună ziua! Aș vrea o ofertă pentru o pompă de căldură aer-apă.\n';L.forEach(function(x){var v=(f[x[1]].value||'').trim();if(v)t+='\n• '+x[0]+': '+v});if(k)t+='\n• Putere estimată pe site: ~'+k.toFixed(1)+' kW';
+var u='https://wa.me/40752632558?text='+encodeURIComponent(t);window.open(u,'_blank','noopener')});})();</script>
 </body>
 </html>
